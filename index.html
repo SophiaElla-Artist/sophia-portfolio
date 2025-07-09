@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b0b" />
+  <title>Sophia Ella - Digital Artist & Illustrator Portfolio</title>
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="Images/favicon.webp" type="image/webp" />
+
+  <!-- ✅ Meta Description -->
+  <meta name="description" content="Sophia Ella is a digital artist specializing in fantasy artwork, book covers, and custom illustrations. Discover her portfolio and commission unique creations." />
+
+  <!-- ✅ Open Graph Meta Tags (Social Media Preview) -->
+  <meta property="og:title" content="Sophia Ella - Digital Artist Portfolio" />
+  <meta property="og:description" content="Explore Sophia Ella's fantasy art, digital illustrations, and custom works. Connect for commissions." />
+  <meta property="og:image" content="https://yourdomain.com/Images/Profile.webp" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- ✅ Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+
+  <!-- ✅ Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- ✅ CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ✅ EmailJS Script -->
+  <script defer src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <!-- ✅ Your Custom JS -->
+  <script defer src="script.js"></script>
+
+  <!-- ✅ Structured Data for Google (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sophia Ella",
+    "url": "https://yourdomain.com",
+    "image": "https://yourdomain.com/Images/Profile.webp",
+    "sameAs": [
+      "https://www.instagram.com/sophia_ella1424/",
+      "https://discord.com/users/1121007369405595698"
+    ],
+    "jobTitle": "Digital Artist & Illustrator",
+    "description": "Sophia Ella is a freelance digital artist creating custom illustrations, fantasy artwork, and book covers for clients worldwide."
+  }
+  </script>
+</head>
+
+<body>
+  <!-- <canvas id="constellation-canvas" aria-hidden="true"></canvas> -->
+  <header>
+    <nav class="navbar">
+  <h1>Sophia <span>Ella</span></h1>
+
+<div id="hamburger" class="hamburger" aria-label="Toggle navigation">
+  <i class="fas fa-bars"></i>
+</div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+  </header>
+
+  <section id="home" class="section home">
+    <div class="intro">
+      <h2>Welcome to Sophia's Zone</h2>
+    <p class="fade-in-left">
+    I’m <strong>Sophia Ella</strong>, a passionate digital artist and illustrator delivering stunning custom artwork for clients across the globe since 2021. From heartfelt portraits to vibrant book covers and whimsical scenes, I bring imagination to life with every brushstroke.
+    </p>
+    </div>
+  </section>
+
+<section class="section" id="about">
+  <h2>About Me</h2>
+  <div class="about-container">
+    <img src="Images/Profile.webp" alt="Sophia Ella">
+    <div class="info">
+    <p class="fade-in-left">
+    My name is <strong>Sophia Ella</strong> and I specialize in transforming concepts into captivating visuals through digital art. Over the years, I’ve collaborated with authors, startups, and creative brands to deliver everything from animated scenes to expressive illustrations and polished posters. My mission is simple: to turn your story into artwork that speaks volumes.
+    </p>
+      <h4 class="tools-subheading">Tools I Use:</h4>
+      <div class="tools">
+        <img src="Images/adobe_photoshop.webp" alt="Photoshop" loading="lazy">
+        <img src="Images/blender.webp" alt="Blender" loading="lazy">
+        <img src="Images/maya.webp" alt="Maya" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="portfolio" class="section portfolio">
+    <h2>My Artworks</h2>
+    <input type="text" id="search" placeholder="Search artwork by title..." />
+    <div class="gallery" id="gallery">
+      <!-- JS Injected Artworks -->
+    </div>
+    <button id="loadMore">Load More</button>
+  </section>
+
+  <section id="testimonials" class="section testimonials">
+    <h2>What Clients Say</h2>
+    <div class="testimonial-list">
+      <div class="testimonial">
+        <img src="Images/client.webp" alt="Client" loading="lazy"/>
+        <h3>Thomas</h3>
+        <p>"Sophia delivered incredible artwork for my book cover! Professional, fast and creative."</p>
+        <p style="color: teal; margin-top: 5px;">(Discord)</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="testimonial">
+        <img src="Images/client.webp" alt="Client" loading="lazy"/>
+        <h3>Julia</h3>
+        <p>"Her illustrations added magic to our product line. Highly recommend Sophia!"</p>
+        <p style="color: teal; margin-top: 5px;">(Instagram)</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="testimonial">
+        <img src="Images/client.webp" alt="Client" loading="lazy"/>
+        <h3>Jane</h3>
+        <p>"Very responsive and skilled artist. Captured my vision perfectly."</p>
+        <p style="color: teal; margin-top: 5px;">(Discord)</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+  </section>
+
+<section id="contact-guide" class="section contact-guide">
+  <h2>Connect with Sophia Ella</h2>
+  <div class="guide-content">
+    <p>
+      Interested in a professional portfolio like this one, or custom artwork tailored to your vision? 
+      Fill out the contact form below and we’ll reach out to you via email as soon as possible. 
+      Whether you’re an individual, brand, or agency — Sophia Ella is ready to bring your ideas to life.
+    </p>
+    <p style="margin-top: 1.5rem;">
+      Want to discover more of my artwork? 
+      <a href="https://www.artstation.com/sophia_ella46" class="glow-link">Click here</a> to explore additional creations.
+    </p>
+  </div>
+</section>
+
+  <section id="contact" class="section contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+  <div class="footer-icons">
+    <a href="https://www.instagram.com/sophia_ella1424/" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+    <a href="https://discord.com/users/1121007369405595698" target="_blank" aria-label="Discord Profile"><i class="fab fa-discord"></i></a>
+  </div>
+    <p>&copy; 2025 Sophia Ella. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
