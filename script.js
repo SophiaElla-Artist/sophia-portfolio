@@ -1,5 +1,5 @@
 // Initialize EmailJS
-emailjs.init("wXPsYj4bd-oMtLZRi"); // Your EmailJS User ID
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY); // Your EmailJS User ID
 
 // Portfolio Gallery
 const artworks = [
@@ -82,7 +82,12 @@ const contactForm = document.getElementById("contactForm");
 contactForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  emailjs.sendForm("service_bdmn2in", "template_n6svdbs", this)
+   emailjs.sendForm(
+    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    contactForm,
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+  )
     .then(() => {
       alert("Message sent successfully!");
       contactForm.reset();
