@@ -1,5 +1,5 @@
 // Initialize EmailJS
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY); // Your EmailJS User ID
+emailjs.init("wXPsYj4bd-oMtLZRi"); // Your EmailJS User ID
 
 // Portfolio Gallery
 const artworks = [
@@ -79,24 +79,17 @@ window.addEventListener("scroll", updateActiveLink);
 
 // Contact Form Submission
 const contactForm = document.getElementById("contactForm");
-
 contactForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  emailjs.sendForm(
-    import.meta.env.VITE_EMAILJS_SERVICE_ID,
-    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-    contactForm,
-    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-  )
-  .then(() => {
-    alert("Message sent successfully!");
-    contactForm.reset();
-  }, (error) => {
-    alert("Failed to send message: " + error.text);
-  });
+  emailjs.sendForm("service_bdmn2in", "template_n6svdbs", this)
+    .then(() => {
+      alert("Message sent successfully!");
+      contactForm.reset();
+    }, (error) => {
+      alert("Failed to send message: " + error.text);
+    });
 });
-
 
 // Toggle Mobile Menu
 const hamburger = document.getElementById("hamburger");
