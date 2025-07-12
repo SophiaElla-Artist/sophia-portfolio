@@ -13,8 +13,6 @@ const artworks = [
   { title: "Edge of the Flame", description: "A fantasy landscape where lava meets a snowy mountain valley.", image: "Images/scene_art.webp" }
 ];
 
-
-
 const gallery = document.getElementById("gallery");
 const loadMoreBtn = document.getElementById("loadMore");
 const searchInput = document.getElementById("search");
@@ -99,77 +97,85 @@ hamburger.addEventListener("click", () => {
   navContainer.classList.toggle("show");
 });
 
+// Close on outside click
+document.addEventListener("click", (e) => {
+  if (!navContainer.contains(e.target) && !hamburger.contains(e.target)) {
+    navContainer.classList.remove("show");
+  }
+});
+
+
 
 // 🌌 Constellation Background Animation
-// const canvas = document.getElementById("constellation-canvas");
-// const ctx = canvas.getContext("2d");
+const canvas = document.getElementById("constellation-canvas");
+const ctx = canvas.getContext("2d");
 
-// let width, height;
-// let stars = [];
-// const STAR_COUNT = 80;
-// const STAR_RADIUS = 1.2;
-// const LINE_DISTANCE = 100;
+let width, height;
+let stars = [];
+const STAR_COUNT = 80;
+const STAR_RADIUS = 1.2;
+const LINE_DISTANCE = 100;
 
-// function resizeCanvas() {
-//   width = canvas.width = window.innerWidth;
-//   height = canvas.height = window.innerHeight;
-// }
+function resizeCanvas() {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+}
 
-// function createStars() {
-//   stars = [];
-//   for (let i = 0; i < STAR_COUNT; i++) {
-//     stars.push({
-//       x: Math.random() * width,
-//       y: Math.random() * height,
-//       vx: (Math.random() - 0.5) * 0.6,
-//       vy: (Math.random() - 0.5) * 0.6,
-//     });
-//   }
-// }
+function createStars() {
+  stars = [];
+  for (let i = 0; i < STAR_COUNT; i++) {
+    stars.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.6,
+      vy: (Math.random() - 0.5) * 0.6,
+    });
+  }
+}
 
-// function drawStars() {
-//   ctx.clearRect(0, 0, width, height);
+function drawStars() {
+  ctx.clearRect(0, 0, width, height);
 
-//   for (let i = 0; i < STAR_COUNT; i++) {
-//     const star = stars[i];
-//     ctx.beginPath();
-//     ctx.arc(star.x, star.y, STAR_RADIUS, 0, Math.PI * 2);
-//     ctx.fillStyle = "white";
-//     ctx.fill();
+  for (let i = 0; i < STAR_COUNT; i++) {
+    const star = stars[i];
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, STAR_RADIUS, 0, Math.PI * 2);
+    ctx.fillStyle = "white";
+    ctx.fill();
 
-//     // Connect with nearby stars
-//     for (let j = i + 1; j < STAR_COUNT; j++) {
-//       const other = stars[j];
-//       const dx = star.x - other.x;
-//       const dy = star.y - other.y;
-//       const distance = Math.sqrt(dx * dx + dy * dy);
-//       if (distance < LINE_DISTANCE) {
-//         ctx.beginPath();
-//         ctx.moveTo(star.x, star.y);
-//         ctx.lineTo(other.x, other.y);
-//         ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / LINE_DISTANCE})`;
-//         ctx.lineWidth = 0.5;
-//         ctx.stroke();
-//       }
-//     }
+    // Connect with nearby stars
+    for (let j = i + 1; j < STAR_COUNT; j++) {
+      const other = stars[j];
+      const dx = star.x - other.x;
+      const dy = star.y - other.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < LINE_DISTANCE) {
+        ctx.beginPath();
+        ctx.moveTo(star.x, star.y);
+        ctx.lineTo(other.x, other.y);
+        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / LINE_DISTANCE})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
 
-//     // Move star
-//     star.x += star.vx;
-//     star.y += star.vy;
+    // Move star
+    star.x += star.vx;
+    star.y += star.vy;
 
-//     // Bounce off edges
-//     if (star.x < 0 || star.x > width) star.vx *= -1;
-//     if (star.y < 0 || star.y > height) star.vy *= -1;
-//   }
+    // Bounce off edges
+    if (star.x < 0 || star.x > width) star.vx *= -1;
+    if (star.y < 0 || star.y > height) star.vy *= -1;
+  }
 
-//   requestAnimationFrame(drawStars);
-// }
+  requestAnimationFrame(drawStars);
+}
 
-// window.addEventListener("resize", () => {
-//   resizeCanvas();
-//   createStars();
-// });
+window.addEventListener("resize", () => {
+  resizeCanvas();
+  createStars();
+});
 
-// resizeCanvas();
-// createStars();
-// drawStars();
+resizeCanvas();
+createStars();
+drawStars();
